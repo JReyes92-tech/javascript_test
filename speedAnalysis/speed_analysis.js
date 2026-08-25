@@ -41,6 +41,7 @@ function endTest() {
             outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
                 "<p>Words Typed: " + typedWords + "</p>" +
                 "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
+                "<p>Total Lenght: " + userTypedText.length + "</p>" +
                 "<p>Words Per Minute (WPM): " + wpm + "</p>";
 }
  
