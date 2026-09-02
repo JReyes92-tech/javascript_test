@@ -6,7 +6,7 @@
         // Check if inputs are valid numbers
         if (!isNaN(num1) && !isNaN(num2)) {
         // Perform the operation
-                        let result = multiply(num1, num2);
+                        let result = arithmethicoperations(num1, num2);
     
                         // Display the result
                         displayResult(result);
@@ -15,16 +15,22 @@
                     }
                 }
     
-                function multiply(a, b) {
+                function arithmethicoperations(a, b) {
                     // Introduce a debugger statement to pause execution
                     debugger;
-    
-                    // Multiply the numbers
-                    return a * b;
+
+                    // Multiply, adding and divide the numbers
+                    const multiply = a * b;
+                    const add = a + b;
+                    const division = a / b;
+
+                    return {multiply, add, division};
                 }
     
                 function displayResult(result) {
                     // Display the result in the paragraph element
                     const resultElement = document.getElementById('result');
-                    resultElement.textContent = `The result is: ${result}`;
+                    resultElement.textContent = `Multiply: ${result.multiply},
+                    Add: ${result.add},
+                    Division: ${result.division}`;
                 }    
