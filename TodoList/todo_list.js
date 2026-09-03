@@ -35,6 +35,11 @@ function clearAllTasks(){
     displayTasks();
 }
 addTaskBtn.addEventListener("click", addTask);
+taskInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter"){
+        addTask();
+    }
+});
 displayTasks();
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
 clearAllTasksBtn.addEventListener("click", clearAllTasks);
