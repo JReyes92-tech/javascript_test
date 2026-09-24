@@ -1,7 +1,11 @@
 var xhr = new XMLHttpRequest();
+var xhr2 = new XMLHttpRequest();
 var url = './health_article.json';
+var url2 = './news_article.json';
 xhr.open('GET', url, true);
+xhr2.open('GET', url2, true);
 xhr.responseType = 'json';
+xhr2.responseType = 'json';
 xhr.onload = function(){
     var articles = xhr.response.articles;
     var articlesDiv = document.getElementById('articles');
@@ -48,5 +52,29 @@ xhr.onload = function(){
       });  
 }
 
+xhr2.onload = function(){
+    var news = xhr2.response.news;
+    var newsDiv = document.getElementById('news');
+
+    news.forEach(function(notice){
+
+        var newDiv = document.createElement('div');
+        newDiv.classList.add('new');
+
+        var title2 = document.createElement('h2');
+        title2.textContent = notice.title;
+
+        var description2 = document.createElement('p');
+        description2.textContent = notice.description;
+        description2.style.textAlign = 'justify';
+
+        newDiv.appendChild(title2);
+        newDiv.appendChild(description2);
+
+        newsDiv.appendChild(newDiv);
+    });
+}
+
 xhr.send();
+xhr2.send();
 
