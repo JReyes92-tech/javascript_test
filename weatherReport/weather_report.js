@@ -5,7 +5,7 @@ function showweatherDetails(event) {
     const lat = document.getElementById('latitude').value;
     const lon = document.getElementById('longitude').value;
     const apiKey = '9dc41c2e89633487f78ca97141459c45'; // Replace 'YOUR_API_KEY' with your actual API key
-    let apiUrl;    
+    let apiUrl;  
 
     if(lat && lon){
         apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -29,4 +29,11 @@ function showweatherDetails(event) {
       });                                                                                                
 }
 document.getElementById('weatherForm').addEventListener('submit',showweatherDetails );
+function Reset(){
+    document.getElementById('latitude').value = '';
+    document.getElementById('longitude').value = '';
+    document.getElementById('city').value = '';
+
+    document.getElementById('weatherInfo').innerHTML= '';
+}
 
